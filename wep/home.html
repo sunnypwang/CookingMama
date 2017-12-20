@@ -5,16 +5,19 @@
 	<head>
 		<title>Cooking MAMA</title>
 		<script src="scr.js"></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body onload="load()"><!--onload="resetAll()"-->
 		<fieldset>
-			<div style="color:#800000">
+			<div class="title">
 				<h1> Enjoy Cooking with Cooking MAMA </h1>
 			</div>
 		</fieldset>
 		<fieldset>
-			<div style="color:#800000">
+			<div>
 				<h2> LET'S COOK </h2>
 			</div>
 			<h2 id="menu"></h2>
@@ -214,8 +217,15 @@
 			}
 		}
 		function sendMessage() {
-			if (valTemp[thisStep]) microgear.chat("NodeMCU",'1');
-			else microgear.chat("NodeMCU",'0');
+			console.log("enter");
+			try{
+				if (valTemp[thisStep]) microgear.chat("NodeMCU",'1');
+				else microgear.chat("NodeMCU",'0');
+			}
+			catch(err){
+				console.log(err);
+			}
+			console.log("exit");
 		}
 		function toNextStep() {
 			thisStep = thisStep+1;
@@ -226,12 +236,17 @@
 		function update() {
 			if (valTime[thisStep] && timeNow > 0) timeNow--;
 			setToThisStep();
+			console.log("updated");
 		}
 		function load() {
+			console.log("loaded");
 			sendMessage();
 			timeNow = (valTime[thisStep]) ? time[thisStep] : 0;
 			setToThisStep();
+			console.log("interval = ");
+			console.log(interval);
 			if (interval == 0) {
+				
 				setInterval(update,1000);
 				interval = 1;
 			}
