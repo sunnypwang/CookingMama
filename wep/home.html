@@ -161,14 +161,16 @@
 	<script src="https://cdn.netpie.io/microgear.js"></script>
 	<script type="text/javascript">
 		const APPID = "CookingMama";
-  		const KEY = "FlTPjt0aOBgLhnI";
-  		const SECRET = "BALL1ksl1ITz4U2SMoRxtseiR";
+  		const KEY = "";
+  		const SECRET = "";
 
   		const ALIAS = "Web";         //  ??͵???
   		const thing1 = "NodeMCU";          //  ?????͹???Ф?
 		
 		var tempNow = "0";
 		var timeNow = (valTime[thisStep]) ? time[thisStep] : 0;
+		
+		var interval = 0;
 
   		var microgear = Microgear.create({
     			key: KEY,
@@ -216,8 +218,8 @@
 			else microgear.chat("NodeMCU",'0');
 		}
 		function toNextStep() {
-			sendMessage();
 			thisStep = thisStep+1;
+			sendMessage();
 			timeNow = time[thisStep];
 			setToThisStep();
 		}
@@ -229,7 +231,10 @@
 			sendMessage();
 			timeNow = (valTime[thisStep]) ? time[thisStep] : 0;
 			setToThisStep();
-			setInterval(update,1000);
+			if (interval == 0) {
+				setInterval(update,1000);
+				interval = 1;
+			}
 			thisStep = 1;
 		}
 		
