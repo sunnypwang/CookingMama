@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Cooking MAMA</title>
+		<script src="scr.js"></script>
+	</head>
+
+	<body onload="load()"><!--onload="resetAll()"-->
+		<fieldset>
+			<div style="color:#800000">
+				<h1> Enjoy Cooking with Cooking MAMA </h1>
+			</div>
+		</fieldset>
+		<fieldset>
+			<div style="color:#800000">
+				<h2> LET'S COOK </h2>
+			</div>
+			<h2 id="menu"></h2>
+			<h2 id="displayName"></h2>
+			<br>
+			<label>Time left :</label>
+			<label id="timeLabel"></label>
+			<br>
+			<br>
+			<label>Require Temperature :</label>
+			<label id="tempLabel"></label>
+			<label>| Temperature Now :</label>
+			<label id="tempLabelNow"></label>
+			<br>
+			<br>
+			<button id="toNextStepBtn" onclick="toNextStep()">Next</button>
+		</fieldset>
+		<fieldset>
+			<h2>Select menu </h2>
+			<select id="selMenu" >
+		    	<option value="001"> Instant Noodle </option>
+		    	<option value="002"> Soup 1 </option>
+		    	<option value="003"> Soup 2 </option>
+		    	<option value="004"> Soup 3 </option>
+			</select>
+			<button id="startSelMenuBtn" onclick="startSelMenu()">Start Cooking</button>
+		</fieldset>
+		<fieldset>
+			<h2> Or set your own menu </h2>
+			<p id="test">...</p>
+			<hr>
+			<fieldset>
+				<br><br>
+				<label>Name : </label>
+				<label> <input type="text" id="menuLabel" onkeyup="setMenu()" /> </label>
+				<br>
+				<br>
+			</fieldset>
+			<fieldset> <!-- *************** STEP1 *************** -->
+				<h3>Step 1 </h3>
+				<br>
+				<label>Description : </label>
+				<label> <input type="text" id="nameLabel1" onkeyup="setName1()" /> </label>
+				<br>
+				<label> <input type="checkbox" name="Time" id="timeCkBx1" onclick="setValTime1()"></label>
+				<label>&nbsp;Set time </label>
+				<br>
+				<label> <input type="number" id="timeIn1" onkeyup="setTime1()" /> </label>
+				<br>
+				<label> <input type="checkbox" id="tempCkBx1" onclick="setValTemp1()" ></label>
+				<label>&nbsp;Set temperature </label>
+				<br>
+				<label> <input type="number" id="tempIn1" onkeyup="setTemp1()"/> </label>
+				<br>
+				<br>
+		    	<button id="add1" onclick="enableBtn2()">Add next step </button> 
+		    	<label id="or1">or</label> 
+		    	<button  id="st1" onclick="setAndLoad1()" >Start Cooking</button> <!--href="02.html"-->
+			</fieldset>
+			<fieldset id="f02" style="visibility:hidden" > 
+				<h3>Step 2 </h3>
+				<br>
+				<label>Description : </label>
+				<label> <input type="text" id="nameLabel2" onkeyup="setName2()"/> </label>
+				<br>
+				<label> <input type="checkbox" name="Time" id="timeCkBx2" onclick="setValTime2()"></label>
+				<label>&nbsp;Set time </label>
+				<br>
+				<label> <input type="number" id="timeIn2" onkeyup="setTime2()" /> </label>
+				<br>
+				<label> <input type="checkbox" id="tempCkBx2" onclick="setValTemp2()" ></label>
+				<label>&nbsp;Set temperature </label>
+				<br>
+				<label> <input type="number" id="tempIn2" onkeyup="setTemp2()" /> </label>
+				<br>
+				<br>
+		    	<button id="add2" onclick="enableBtn3()">Add next step </button>
+		    	<label id="or2"> or </label> 
+		    	<button id="st2" onclick="setAndLoad2()" >Start Cooking</button>
+			</fieldset>
+			<fieldset id="f03" style="visibility:hidden"> 
+				<h3>Step 3 </h3>
+				<br>
+				<label>Description : </label>
+				<label> <input type="text" id="nameLabel3" onkeyup="setName3()"/> </label>
+				<br>
+				<label> <input type="checkbox" name="Time" id="timeCkBx3" onclick="setValTime3()"></label>
+				<label>&nbsp;Set time </label>
+				<br>
+				<label> <input type="number" id="timeIn3" onkeyup="setTime3()" /> </label>
+				<br>
+				<label> <input type="checkbox" id="tempCkBx3" onclick="setValTemp3()" ></label>
+				<label>&nbsp;Set temperature </label>
+				<br>
+				<label> <input type="number" id="tempIn3" onkeyup="setTemp3()"/> </label>
+				<br>
+				<br>
+		    	<button id="add3" onclick="enableBtn4()">Add next step </button>
+		    	<label id="or3"> or </label> 
+		    	<button id="st3" onclick="setAndLoad3()" >Start Cooking</button>
+			</fieldset>
+			<fieldset id="f04" style="visibility:hidden"> 
+				<h3>Step 4 </h3>
+				<br>
+				<label>Description : </label>
+				<label> <input type="text" id="nameLabel4" onkeyup="setName4()"/> </label>
+				<br>
+				<label> <input type="checkbox" name="Time" id="timeCkBx4" onclick="setValTime4()"></label>
+				<label>&nbsp;Set time </label>
+				<br>
+				<label> <input type="number" id="timeIn4" onkeyup="setTime4()"/> </label>
+				<br>
+				<label> <input type="checkbox" id="tempCkBx4" onclick="setValTemp4()" ></label>
+				<label>&nbsp;Set temperature </label>
+				<br>
+				<label> <input type="number" id="tempIn4" onkeyup="setTemp4()"/> </label>
+				<br>
+				<br>
+		    	<button id="add4" onclick="enableBtn5()">Add next step </button>
+		    	<label id="or4"> or </label> 
+		    	<button id="st4" onclick="setAndLoad4()">Start Cooking</button>
+			</fieldset>
+			<fieldset id="f05" style="visibility:hidden"> 
+				<h3>Step 5 </h3>
+				<br>
+				<label>Description : </label>
+				<label> <input type="text" id="nameLabel5" onkeyup="setName5()"/> </label>
+				<br>
+				<label> <input type="checkbox" name="Time" id="timeCkBx5" onclick="setValTime("timeCkBx5",5)"></label>
+				<label>&nbsp;Set time </label>
+				<br>
+				<label> <input type="number" id="timeIn5" onkeyup="setTime5()"/> </label>
+				<br>
+				<label> <input type="checkbox" id="tempCkBx5" onclick="setValTemp5()" ></label>
+				<label>&nbsp;Set temperature </label>
+				<br>
+				<label> <input type="number" id="tempIn1" onkeyup="setTemp5()"/> </label>
+				<br>
+				<br>
+		    	<button id="st5" onclick="setAndLoad5()" >Start Cooking</button>
+			</fieldset>
+		</fieldset>
+
+	<script src="https://cdn.netpie.io/microgear.js"></script>
+	<script type="text/javascript">
+		const APPID = "CookingMama";
+  		const KEY = "FlTPjt0aOBgLhnI";
+  		const SECRET = "BALL1ksl1ITz4U2SMoRxtseiR";
+
+  		const ALIAS = "Web";         //  ??͵???
+  		const thing1 = "NodeMCU";          //  ?????͹???Ф?
+		
+		var tempNow = "0";
+		var timeNow = (valTime[thisStep]) ? time[thisStep] : 0;
+
+  		var microgear = Microgear.create({
+    			key: KEY,
+    			secret: SECRET,
+    			alias : ALIAS
+  		});
+
+		microgear.on('message',function(topic,msg) {
+			tempNow = msg;
+  		});
+
+		microgear.on('connected', function() {
+			microgear.setAlias(ALIAS);
+		});
+		
+		microgear.connect(APPID);
+		
+		var thisStep = 1;
+		function setToThisStep(){
+			document.getElementById("menu").innerHTML = menuName;	
+			document.getElementById("displayName").innerHTML = names[thisStep];	
+			if (valTime[thisStep]) {
+				document.getElementById("timeLabel").innerHTML = timeNow;
+			}else{
+				document.getElementById("timeLabel").innerHTML = "-";
+			}
+			if (valTemp[thisStep]){
+				
+				document.getElementById("tempLabel").innerHTML = temp[thisStep];
+				document.getElementById("tempLabelNow").innerHTML = tempNow;	
+			}else{
+				
+				document.getElementById("tempLabel").innerHTML = "-";
+			}
+			if( (valTime[thisStep] & timeNow > 0) | 
+				(valTemp[thisStep] & tempNow < temp[thisStep]) |
+				thisStep==maxStep){
+				document.getElementById("toNextStepBtn").style.visibility = "hidden";
+			}else{
+				document.getElementById("toNextStepBtn").style.visibility = "visible";
+			}
+		}
+		function sendMessage() {
+			if (valTemp[thisStep]) microgear.chat("NodeMCU",'1');
+			else microgear.chat("NodeMCU",'0');
+		}
+		function toNextStep() {
+			sendMessage();
+			thisStep = thisStep+1;
+			timeNow = time[thisStep];
+			setToThisStep();
+		}
+		function update() {
+			if (valTime[thisStep] && timeNow > 0) timeNow--;
+			setToThisStep();
+		}
+		function load() {
+			sendMessage();
+			timeNow = (valTime[thisStep]) ? time[thisStep] : 0;
+			setToThisStep();
+			setInterval(update,1000);
+			thisStep = 1;
+		}
+		
+	</script>
+		  
+	</body>
+
+</html>
