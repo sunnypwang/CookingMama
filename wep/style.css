@@ -1,13 +1,30 @@
 body {
-    background-color: lightblue;
-		
+		font-family: 'Barlow', sans-serif;
+		color: black;
+
+}
+
+
+#bg {
+  content: "";
+  background: url("cook.jpg");
+	opacity: 0.4;
+	filter:alpha(opacity=40);
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;   
 }
 
 h1 {
     color: white;
-    margin-left: 20px;
-		font-family: 'Arial';
+		font-family: 'Barlow', sans-serif;
 		text-align: center;
+		font-weight: bold;
+		font-size: 50px;
 }
 
 button {
@@ -20,10 +37,44 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-	
-}
-
-label {
 		font-family: 'Barlow', sans-serif;
 }
 
+fieldset {
+	border-style: hidden;
+	text-align: center;
+	font-family: 'Barlow', sans-serif;
+}
+
+.title {
+		background-color: black;
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		margin: 0px;
+		text-weight: 10px;
+}
+label {
+		
+}
+
+.menuselect {
+		
+	
+}
+.style-select {
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px;
+   width: 268px;
+	 margin: 15px;
+}
+
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.black   { background-color: #000; color: #fff; }

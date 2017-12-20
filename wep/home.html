@@ -11,11 +11,12 @@
 	</head>
 
 	<body onload="load()"><!--onload="resetAll()"-->
-		<fieldset>
+		<div id="bg"></div>
+
 			<div class="title">
-				<h1> Enjoy Cooking with Cooking MAMA </h1>
+				<h1>Enjoy Cooking with Cooking MAMA</h1>
 			</div>
-		</fieldset>
+
 		<fieldset>
 			<div>
 				<h2> LET'S COOK </h2>
@@ -35,9 +36,9 @@
 			<br>
 			<button id="toNextStepBtn" onclick="toNextStep()">Next</button>
 		</fieldset>
-		<fieldset>
+		<fieldset class="menuselect">
 			<h2>Select menu </h2>
-			<select id="selMenu" >
+			<select id="selMenu" class="style-select black rounded">
 		    	<option value="001"> Instant Noodle </option>
 		    	<option value="002"> Soup 1 </option>
 		    	<option value="003"> Soup 2 </option>
@@ -254,7 +255,8 @@
 		}
 		
 	</script>
-		  
+
+
 	</body>
 
 </html>
