@@ -24,18 +24,19 @@
 			<h2 id="menu"></h2>
 			<h2 id="displayName"></h2>
 			<br>
-			<label>Time left :</label>
-			<label id="timeLabel"></label>
+			<label class="console">Time left :</label>
+			<label class="console" id="timeLabel"></label>
 			<br>
 			<br>
-			<label>Require Temperature :</label>
-			<label id="tempLabel"></label>
-			<label>| Temperature Now :</label>
-			<label id="tempLabelNow"></label>
+			<label class="console">Require Temperature :</label>
+			<label class="console" id="tempLabel"></label>
+			<label class="console">| Temperature Now :</label>
+			<label class="console" id="tempLabelNow"></label>
 			<br>
 			<br>
 			<button id="toNextStepBtn" onclick="toNextStep()">Next</button>
 		</fieldset>
+		<hr>
 		<fieldset class="menuselect">
 			<h2>Select menu </h2>
 			<select id="selMenu" class="style-select black rounded">
@@ -46,16 +47,16 @@
 			</select>
 			<button id="startSelMenuBtn" onclick="startSelMenu()">Start Cooking</button>
 		</fieldset>
+		<hr>
 		<fieldset>
 			<h2> Or set your own menu </h2>
 			<p id="test">...</p>
-			<hr>
 			<fieldset>
-				<br><br>
+				<br>
 				<label>Name : </label>
 				<label> <input type="text" id="menuLabel" onkeyup="setMenu()" /> </label>
-				<br>
-				<br>
+				
+				
 			</fieldset>
 			<fieldset> <!-- *************** STEP1 *************** -->
 				<h3>Step 1 </h3>
@@ -165,8 +166,8 @@
 	<script src="https://cdn.netpie.io/microgear.js"></script>
 	<script type="text/javascript">
 		const APPID = "CookingMama";
-  		const KEY = "";
-  		const SECRET = "";
+  		const KEY = "OstAv299WJ0bNdV";
+  		const SECRET = "lS23bNZhh4XLbVAtHFMAZKNEK";
 
   		const ALIAS = "Web";         //  ??͵???
   		const thing1 = "NodeMCU";          //  ?????͹???Ф?
